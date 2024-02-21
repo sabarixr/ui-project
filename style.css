@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Sixtyfour&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
+.card-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  padding: 5px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+}
+@keyframes changeColor {
+  0% {
+    background-image: radial-gradient(circle at top right, #32cd32, #ff69b4);
+  }
+  50% {
+    background-image: radial-gradient(circle at top right, #6394ff, #76e8b3);
+  }
+  100% {
+    background-image: radial-gradient(circle at top right, #87ceeb, #ffa07a);
+  }
+}
+.front {
+  animation: changeColor 5s infinite linear alternate;
+  font-family: "Sixtyfour", sans-serif;
+}
+
+.back {
+  transform: rotateY(-180deg);
+  font-family: "Dancing Script", cursive;
+  animation: changeColor 0.5s infinite linear alternate;
+}
+.card:hover .card-inner {
+  transform: rotateY(-180deg);
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
